@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Its Your Birthday!!!</title>
+    <link rel="stylesheet" href="{% static 'birthday_wishes/css/stylesheet.css' %}">
+</head>
+<body>
+    <section>
+        <header class="logo">
+            <a href="https://rosabon-finance.com/" target="_blank">
+                <img src="{% static 'birthday_wishes/images/rosabon_logo.png' %}" alt="">
+            </a>
+        </header>
+        {% if customer.gender == "Female" %}
+        <video src="{% static 'birthday_wishes/images/heartballoon.mp4'%}" muted loop autoplay style="object-fit: cover;"></video>
+        {% elif customer.gender == "Male" %}
+        <video src="{% static 'birthday_wishes/images/blue_balloon.mov'%}" muted loop autoplay style="object-fit: cover;"></video>
+        {% endif %}
+        <div class="message">
+            <div class="icons">
+                <span class="row">
+                    Happy Birthday 
+                </span>
+            </div>
+            {% block content %}
+            <div class="icons">
+                <span class="row" id="name">
+                    {{ customer.name }}
+                </span>
+            </div>
+            {% endblock %}
+        </div>
+        <div class="video">
+            <video src="{% static 'birthday_wishes/images/heartballoon.mp4'%}" muted loop autoplay></video>
+        </div>
+        <div>
+            <p class="bottom_message">On this very day, the earth was blessed with your arrival, Thank you for your service to our country. God Bless Your New Age</p>
+            <p class="hurray">Hip Hip Hip..... <span>HURRAY!!!</span></p>
+        </div>
+    
+    </section> 
+</body>
+</html>

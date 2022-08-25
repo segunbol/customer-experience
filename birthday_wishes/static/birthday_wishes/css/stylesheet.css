@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+section {
+    height: 100%;
+    width: 480px;
+    border: 1px solid #325092 ;
+    position: absolute;
+}
+
+video {
+    width: 480px;
+    height: 100%;
+    position: absolute;
+    z-index: -5;
+}
+section
+header {
+    display: flex;
+    justify-content: end;
+    top: 5px;
+    right: 10px;
+    position: absolute;
+}
+section img {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width:190px;
+    
+}
+
+.video {
+    padding: 5px;
+    
+}
+.video video  {
+    position: relative;
+    width: 470px;
+    height: 35vh;
+    object-fit: cover;
+    top: 10rem;
+
+}
+
+.message {
+    position: relative;
+    top: 7rem;
+
+}
+
+.icons .row {
+    width: 100%;
+    text-align: center;
+    
+}
+
+.icons span {
+    color: #325092;
+    font-size: 2rem;
+    display: inline-block;
+    transition: transform 0.5s ease-in, opacity 0.7s;
+    
+}
+
+#name {
+    font-weight: 800;
+}
+
+div p {
+    justify-content: center;
+    bottom: 10px;
+    font-size: 1.3rem;
+    padding: 10px;
+    text-align: center;
+}
+
+div p span {
+    color: #325092;
+    font-size: 30px;
+    text-align: center;
+}
+
+.bottom_message {
+    position: absolute;
+    bottom: 50px;
+}
+.hurray {
+    padding: 0;
+    position: absolute;
+    bottom: 2.5rem;
+    margin: 0;
+    
+
+}

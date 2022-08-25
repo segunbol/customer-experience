@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>List Of Our Customers</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            body {
+                margin:0;
+                padding: 0;
+                
+            }
+            section {
+                display: grid;
+                grid-row: 2;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <img src="/rosabon_logo.png" alt="">
+        </header>
+        <section>
+            <div class='moon'>
+                {% for c in all_groups %}
+            <ul class="group">
+                <li>
+                    <a href="">{{ c.group_partner }}</a>
+                </li>
+            </ul> 
+            {% endfor %}
+            </div>
+            <div class='moon'>
+                {% for c in all_customers %}
+            <ul class="group">
+                <li>
+                    <a href="{{ c.get_absolute_url }}" target='_blank'>{{ c.name }}</a>
+                </li>
+            </ul> 
+            {% endfor %}
+            </div>
+        </section>
+        
+    </body>
+</html>

@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Its Your Birthday!!!</title>
+    <link rel="stylesheet" href="{% static 'birthday_wishes/css/design.css' %}">
+</head>
+<body>
+   <section>
+        <video src="/heartballoon.mp4" muted loop autoplay style="object-fit: cover;"></video>
+        <header class="logo">
+            <a href="https://rosabon-finance.com/">
+                <img src={% static 'birthday_wishes/images/rosabon_logo.png' %} alt="">
+            </a>
+        </header>
+        <div class="content">
+            <div class="icons">
+                <span class="row">
+                    Happy Birthday 
+                </span>
+            </div>
+            <div class="icons">
+                {% block content %}
+                <span class="row" id="name">
+                    {{ customer.name }}
+                </span>
+                {% endblock %}
+            </div>
+        </div>
+        <div class="video">
+            <video src={% static 'birthday_wishes/images/heartballoon.mp4' %} muted loop autoplay></video>
+        </div>
+        <div>
+            <p>On this very day, the earth was blessed with your arrival, Thank you for your service to our country. God Bless Your New Age</p>
+            <p>Hip Hip Hip..... <span>HURRAY!!!</span></p>
+        </div>
+   </section> 
+</body>
+</html>
