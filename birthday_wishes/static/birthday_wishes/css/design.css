@@ -1,84 +1,407 @@
-body {
+* {
+    margin: 0;
+    padding: 0%;
+    
+  }
+  body {
+    width: 100%;
     display: flex;
     min-height: 100vh;
-    box-sizing: border-box;
+    
     justify-content: center;
-    align-items: center;
-    
-    
-}
-
-section {
+    align-items: center; 
+      
+  }
+  
+  section {
     height: 100vh;
-    width: 480px;
-    border: 1px solid #325092 ;
-    
-}
-
-video {
-    width: 480px;
-    height: 100vh;
-    position: absolute;
+    width: 100%;
+    position: absolute;  
+  }
+  
+  video {
+    width: 100%;
     object-fit: cover;
-    z-index: -5;
-}
-
-section
-header {
+    position: absolute;
+    height: 100%;
+    z-index: -10;
+    padding: 0;
+    margin: 0;
+  }
+  
+  section
+  header {
     display: flex;
     justify-content: end;
-}
-section img {
-    position: relative;
+    position: absolute;
+    right: 1rem;
+    top: 0.4rem;
+    background-color: #04112b;
+    border-radius:1rem;
+    z-index: 10;
+    
+  }
+  section img {
     display: flex;
     flex-direction: column;
     top:5px;
-    width:190px;
-    
-}
-
-.video {
+    width:10.6rem;
+    height: 5.6rem;   
+  }
+  .video {
     padding: 5px;
-    border-radius: 15px;
-}
-.video video  {
-    position: relative;
-    width: 470px;
-    height: 35vh;
-    border-radius: 15px;
-
-}
-
-
-
-.icons .row {
-    width: 100%;
+  }
+  .video video  {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    right: 2rem;
+    bottom: 8rem;
+    border-radius: 1.5rem;
+    z-index: 10;
+  }
+  
+  .overlay {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: 100%;
+    background-color: rgb(86, 81, 143);
+    mix-blend-mode: overlay ;
+    z-index:4 ;
+  }
+  .message {
+    margin-top: 6rem;
+  }
+  
+  .icons .row {
+    width: 50%;
     text-align: center;
-    
-}
-
-.icons span {
+    /*transform: translateY(10px) rotate(-20deg);*/
+  }
+  
+  .icons span {
     color: #325092;
-    
-    font-size: 2rem;
-   
+    font-size: 3rem;
     display: inline-block;
     transition: transform 0.5s ease-in, opacity 0.7s;
     
-}
-
-#name {
-    font-weight: 800;
-}
-
-div p {
-    text-shadow: 4px 4px 0 rgba(62, 40, 102, 0.322);
-    font-size: 25px;
-    padding: 10px;
+    
+  }
+  
+  #happy {
+    font-weight: 600;
+  }
+  
+  #name {
+    margin-top: 2rem;
+    font-weight: 900;
+    z-index: 10;
+    animation: flicker 4.5s infinite alternate;
+    color: #fff;
+  }
+  
+  /* Flickering animation */
+  @keyframes flicker {
+      
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 7px #325092,
+        0 0 10px #325092,
+        0 0 21px #325092,
+        0 0 42px #325092,
+        0 0 82px #071430,
+        0 0 92px #071430,
+        0 0 102px #071430,
+        0 0 151px #071430;
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+  }
+  
+  div p {
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding-top: 4.5rem;
+    padding-left: 0.5rem;
     text-align: center;
-}
-
-div p span {
-    color: #325092;
-    font-size: 35px;
-}
+    width: 45%;
+    
+  }
+  
+  div p span {
+    color: #eaedf3;
+    font-size: 3rem;
+    font-weight: 900;
+    animation: flicker 4.5s infinite alternate;
+    
+  }
+  
+  /* Flickering animation */
+  @keyframes flicker {
+      
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 7px #325092,
+        0 0 10px #325092,
+        0 0 21px #325092,
+        0 0 42px #325092,
+        0 0 82px #071430,
+        0 0 92px #071430,
+        0 0 102px #071430,
+        0 0 151px #071430;
+    }
+  }
+  
+  @media (min-width:770px) and (max-width: 1100px) {
+    .section{
+      object-fit: cover;
+      overflow:scroll;
+    }
+  
+    .video video  {
+      position: absolute;
+      width: 45%;
+      height: 40%;
+      right: 2rem;
+      bottom: 10rem;
+      border-radius: 1.5rem;
+      z-index: 10;
+    }
+  
+    .message {
+      margin-top: 6rem;
+    }
+    #name {
+      margin-top: .5 rem;
+      font-weight: 900;
+      z-index: 10;
+      animation: flicker 4.5s infinite alternate;
+      color: #fff;
+    }
+  
+    .icons .row {
+      width: 50%;
+      text-align: center;
+      /*transform: translateY(10px) rotate(-20deg);*/
+    }
+    
+    .icons span {
+      color: #325092;
+      font-size: 2.5rem;
+      display: inline-block;
+      transition: transform 0.5s ease-in, opacity 0.7s;
+    }
+  
+    div p {
+      font-weight: 500;
+      font-size: 1.5rem;
+      padding-top: 4.5rem;
+      padding-left: 0.5rem;
+      text-align: center;
+      width: 45%;
+      
+    }
+  }
+  
+  @media (max-width: 769px) {
+    
+    *{
+      margin: 0;
+      padding: 0;
+      justify-items: center;
+    }
+    .section {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      
+    }
+    .video {
+      justify-content: center;
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      
+    }
+  
+    .video video {
+      display: flex;
+      width: 85%;
+      height: 40vh;
+      position: sticky;
+      align-self: center;
+      align-content: center;
+      justify-content: center;
+      justify-items: center;
+      justify-self: center;
+      flex-direction: column;
+      
+  
+    }
+  
+    section header {
+      display: flex;
+      justify-content: end;
+      position: absolute;
+      right: 1rem;
+      top: 0.4rem;
+      background-color: #04112b;
+      border-radius:1rem;
+      z-index: 10;
+      
+  }
+    section img {
+      display: flex;
+      flex-direction: column;
+      top:5px;
+      width:6.8rem;
+      height: 3.6rem;   
+    }
+  
+    .message {
+      margin-top: 6rem;
+    }
+    #name {
+      margin-top:0rem;
+      margin-bottom: 1.5rem;
+      font-weight: 900;
+      z-index: 10;
+      animation: flicker 4.5s infinite alternate;
+      color: #fff;
+    }
+  
+    .icons .row {
+      width: 90%;
+      text-align: center;
+      /*transform: translateY(10px) rotate(-20deg);*/
+    }
+    
+    .icons span {
+      color: #325092;
+      font-size: 1.8rem;
+      display: inline-block;
+      transition: transform 0.5s ease-in, opacity 0.7s;
+    }
+  
+    div p {
+      position: absolute;
+      bottom: 1rem;
+      font-weight: 500;
+      font-size: 1rem;
+      padding-top: 0rem;
+      padding-left: 0.5rem;
+      text-align: center;
+      width: 95%;
+      text-align: center;
+      left: 0%;
+      
+    }
+  
+    div p span {
+      color: #eaedf3;
+      font-size: 1.5rem;
+      font-weight: 700;
+  }
+  
+    .hurray {
+      padding-top: 0;
+      margin-top: 0;
+      
+  }
+  
+  .hurray {
+      animation: flicker 1.5s infinite alternate;
+      color: #fff;
+    }
+    
+    /* Flickering animation */
+    @keyframes flicker {
+        
+      0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    
+          text-shadow:
+          0 0 7px #325092,
+          0 0 10px #325092,
+          0 0 21px #325092,
+          0 0 42px #325092,
+          0 0 82px #132e69,
+          0 0 92px #0b2152,
+          0 0 102px #020a1d,
+          0 0 151px rgb(245, 154, 169);
+      
+      }
+      
+      20%, 24%, 55% {        
+          text-shadow: none;
+      } 
+  }
+  .shortnote {
+      padding-bottom: 0;
+      margin-bottom: 0rem ;
+      bottom: 3rem;
+      
+  }
+  }
+  
+  @media (min-width: 291px) and (max-width: 354px) {
+    .video video {
+      width: 85%;
+      height: 30vh;
+    }
+  
+    div p {
+      display: grid;
+      font-weight: 100;
+      font-size: 0.6rem;  
+    }
+  
+    .shortnote{
+      bottom:5rem;
+      
+    }
+  }
+  
+  @media (max-width: 290px) {
+    .video video {
+      display: none;
+    }
+  
+    .icons span {
+      font-size: 0.5rem;
+    }
+  
+    .shortnote{
+      bottom: 8rem;
+      font-size: 0.5rem;
+      text-align: left;
+      box-sizing: border-box;
+    }
+  
+      div p span {
+      color: #eaedf3;
+      font-size: 0.5rem;
+      font-weight: 700;
+    } 
+  
+    div p {
+      display: grid;
+      font-weight: 100;
+      font-size: 1.8rem;  
+    }
+  
+    section img {
+      width:2.6rem;
+      height: 1.6rem;   
+    }
+  }

@@ -18,7 +18,7 @@ def list_of_customers(request):
 
 def customer_page(request, slug):
     customer = get_object_or_404(Customer, slug=slug)
-    return render(request, 'Birthday/another.html', {'customer':customer})
+    return render(request, 'Birthday/mobile.html', {'customer':customer})
 
 
 

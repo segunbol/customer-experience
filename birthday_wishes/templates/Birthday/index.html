@@ -5,41 +5,31 @@
     <head>
         <meta charset="UTF-8">
         <title>List Of Our Customers</title>
-        <link rel="stylesheet" href="css/style.css">
-        <style>
-            body {
-                margin:0;
-                padding: 0;
-                
-            }
-            section {
-                display: grid;
-                grid-row: 2;
-            }
-
-        </style>
+        <link rel="stylesheet" href="{% static 'birthday_wishes/css/style.css' %}">
     </head>
     <body>
-        <header>
-            <img src="/rosabon_logo.png" alt="">
-        </header>
+
         <section>
-            <div class='moon'>
-                {% for c in all_groups %}
-            <ul class="group">
-                <li>
-                    <a href="">{{ c.group_partner }}</a>
-                </li>
-            </ul> 
+            <header>
+                <img src="{% static 'birthday_wishes/images/rosabon_logo.png' %}" alt="">
+            </header>
+            <video src= "{% static 'birthday_wishes/images/balloons_day.mp4' %}" muted loop autoplay ></video>
+            <div class='message' id="name">
+            {% for c in all_groups %}
+                <ul class="icons">
+                    <li>
+                        <a href="">{{ c.group_partner }}</a>
+                    </li>
+                </ul> 
             {% endfor %}
             </div>
-            <div class='moon'>
-                {% for c in all_customers %}
-            <ul class="group">
-                <li>
-                    <a href="{{ c.get_absolute_url }}" target='_blank'>{{ c.name }}</a>
-                </li>
-            </ul> 
+            <div class='message' id="name">
+            {% for c in all_customers %}
+                <ul class="icons">
+                    <li>
+                        <a href="{{ c.get_absolute_url }}" target='_blank'>{{ c.name }}</a>
+                    </li>
+                </ul> 
             {% endfor %}
             </div>
         </section>

@@ -1,41 +1,51 @@
 {% load static %}
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Its Your Birthday!!!</title>
+    <title>Main Page</title>
     <link rel="stylesheet" href="{% static 'birthday_wishes/css/design.css' %}">
+    <!--link rel="stylesheet" media="screen and (min-width: 700px)" href="/css/largescreen.css">
+    <link rel="stylesheet" media="screen and (max-width: 350px)" href="css/stylesheet.css">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/smallscreen.css"-->
 </head>
 <body>
    <section>
-        <video src="/heartballoon.mp4" muted loop autoplay style="object-fit: cover;"></video>
         <header class="logo">
             <a href="https://rosabon-finance.com/">
-                <img src={% static 'birthday_wishes/images/rosabon_logo.png' %} alt="">
+                <img src="{% static 'birthday_wishes/images/rosabon_logo.png' %}" alt="">
             </a>
         </header>
-        <div class="content">
+        {% if customer.gender == "Male" %}
+        <video src="{% static 'birthday_wishes/images/balloons_day.mp4' %}" muted loop autoplay ></video>
+        {% elif customer.gender == "Female" %}
+        <video src="{% static 'birthday_wishes/images/heartballoon.mp4' %}" muted loop autoplay ></video>
+        {% endif %}
+        <div class="overlay"></div>
+        <div class="message content">
             <div class="icons">
-                <span class="row">
-                    Happy Birthday 
+                <span class="row" id="happy">
+                    Happy Birthday!!! 
                 </span>
             </div>
+            {% block content %}
             <div class="icons">
-                {% block content %}
                 <span class="row" id="name">
                     {{ customer.name }}
                 </span>
-                {% endblock %}
             </div>
+            {% endblock %}
+            
         </div>
         <div class="video">
-            <video src={% static 'birthday_wishes/images/heartballoon.mp4' %} muted loop autoplay></video>
+            <video src="{% static 'birthday_wishes/images/blue_balloon.mov' %}" muted loop autoplay></video>
         </div>
         <div>
-            <p>On this very day, the earth was blessed with your arrival, Thank you for your service to our country. God Bless Your New Age</p>
-            <p>Hip Hip Hip..... <span>HURRAY!!!</span></p>
+            <p class="shortnote">On this very day, the earth was blessed with your arrival, Thank you for your service to our country. <br> God Bless Your New Age</p>
+            <p class="hurray">Hip Hip Hip..... <span>HURRAY!!!</span></p>
         </div>
    </section> 
 </body>
