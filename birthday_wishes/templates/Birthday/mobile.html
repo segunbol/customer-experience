@@ -20,7 +20,7 @@
             </a>
         </header>
         {% if customer.gender == "Male" %}
-        <video src="{% static 'birthday_wishes/images/balloons_day.mp4' %}" muted loop autoplay ></video>
+        <video class="background_video" src="{% static 'birthday_wishes/images/balloons_day.mp4' %}" muted loop autoplay ></video>
         {% elif customer.gender == "Female" %}
         <video src="{% static 'birthday_wishes/images/heartballoon.mp4' %}" muted loop autoplay ></video>
         {% endif %}

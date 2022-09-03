@@ -3,7 +3,11 @@ from tkinter import CASCADE
 from django.db import models
 from django.urls import reverse
 
-
+GENDER_CHOICES = (
+    (' ',' '),
+    ('Male','Male'), 
+    ('Female','Female'),
+    )
 
 class Group(models.Model):
     group_partner = models.CharField(max_length=150, db_index=True, default="Lagos")
@@ -20,7 +24,7 @@ class Customer(models.Model):
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
     name = models.CharField(('name'),max_length=255)
     slug = models.SlugField((''),max_length=150, unique=True)
-    gender = models.CharField(max_length=10, default=" ")
+    gender = models.CharField(max_length=10,choices=GENDER_CHOICES, default=" ")
     erp_no = models.IntegerField(default= " ", blank=False, unique=True)
     ippis_no_oracle_no_staff_id = models.CharField(max_length=10,default=" ",blank=False, unique=True)
     date_of_birth = models.DateField()

@@ -16,9 +16,9 @@
             </a>
         </header>
         {% if customer.gender == "Female" %}
-        <video src="{% static 'birthday_wishes/images/heartballoon.mp4'%}" muted loop autoplay style="object-fit: cover;"></video>
+        <video class="background_video" src="{% static 'birthday_wishes/images/heartballoon.mp4'%}" muted loop autoplay style="object-fit: cover;"></video>
         {% elif customer.gender == "Male" %}
-        <video src="{% static 'birthday_wishes/images/blue_balloon.mov'%}" muted loop autoplay style="object-fit: cover;"></video>
+        <video class="background_video" src="{% static 'birthday_wishes/images/blue_balloon.mov'%}" muted loop autoplay style="object-fit: cover;"></video>
         {% endif %}
         <div class="message">
             <div class="icons">
