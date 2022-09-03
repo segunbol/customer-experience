@@ -1,6 +1,9 @@
+from re import A
 from django.shortcuts import render, get_object_or_404
 from .models import Customer, Group
+from datetime import datetime
 
+gun = []
 
 def all_customers(request):
     return {
@@ -18,7 +21,14 @@ def list_of_customers(request):
 
 def customer_page(request, slug):
     customer = get_object_or_404(Customer, slug=slug)
-    return render(request, 'Birthday/mobile.html', {'customer':customer})
+    dated = datetime.now().strftime('%m-%d')
+    data = {'customer':customer, 'dated':dated}
+    if customer.date_of_birth.strftime("%m-%d") == dated:
+        return render(request, 'Birthday/mobile.html', data)
+    else:
+        return render(request, 'Birthday/notbirthday.html', data)
+    
+    
 
 
 

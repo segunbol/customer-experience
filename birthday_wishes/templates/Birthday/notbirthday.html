@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hey ! {{ customer.name }}</title>
+    <title> Hey ! {{ customer.name }}</title>
     <link rel="stylesheet" href="{% static 'birthday_wishes/css/design.css' %}">
     <!--link rel="stylesheet" media="screen and (min-width: 700px)" href="/css/largescreen.css">
     <link rel="stylesheet" media="screen and (max-width: 350px)" href="css/stylesheet.css">
@@ -29,7 +29,7 @@
             {% block content %}
             <div class="icons">
                 <span class="row" id="happy">
-                    Happy Birthday!!!  {{ customer.date_of_birth|date:"d, M" }}
+                    Happy Birthday in Arrears !!!
                 </span>
             </div>
             
@@ -47,7 +47,7 @@
                     <video src="{% static 'birthday_wishes/images/blue_balloon.mov' %}" muted loop autoplay></video>
                 </div>
                 <div>
-                    <p class="shortnote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, voluptatum?  On this very day, the earth was blessed with your arrival, Thank you for your service to our country. <br> God Bless Your New Age</p>
+                    <p class="shortnote"> On the {{ customer.date_of_birth|date:"d, M" }}, the earth was blessed with your arrival, Thank you for your service to our country. <br> God Bless Your New Age</p>
                     <p class="hurray">Hip Hip Hip..... <span>HURRAY!!!</span></p>
                 </div>
             </div>
