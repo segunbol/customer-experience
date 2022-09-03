@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Hey ! {{ customer.name }}</title>
-    <link rel="stylesheet" href="{% static 'birthday_wishes/css/design.css' %}">
+    <title> Not ! {{ customer.name }}</title>
+    <link rel="stylesheet" href="{% static 'birthday_wishes/css/styles.css' %}">
     <!--link rel="stylesheet" media="screen and (min-width: 700px)" href="/css/largescreen.css">
     <link rel="stylesheet" media="screen and (max-width: 350px)" href="css/stylesheet.css">
     <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/smallscreen.css"-->
@@ -57,7 +57,9 @@
         
    </section>
    <script type="text/javascript">
-        var x = {{greeting.content}};
+        var x = document.getElementById("name").innerText;
+        var y = 90
+        console.log(x)
     </script> 
 </body>
 </html>

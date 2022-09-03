@@ -1,13 +1,12 @@
 * {
     margin: 0;
     padding: 0%;
-    
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+    transition: all;
   }
   body {
-    width: 100%;
     display: flex;
     min-height: 100vh;
-
     justify-content: center;
     align-items: center; 
       
@@ -25,10 +24,8 @@
     position: absolute;
     height: 100%;
     z-index: -10;
-    padding: 0;
-    margin: 0;
   }
-  
+
   section
   header {
     display: flex;
@@ -36,7 +33,7 @@
     position: absolute;
     right: 1rem;
     top: 0.4rem;
-    /*background-color: #828a9b;*/
+    /*background-color: #04112b;*/
     border-radius:1rem;
     z-index: 10;
     
@@ -48,6 +45,9 @@
     width:10.6rem;
     height: 5.6rem;   
   }
+  
+  
+  
   .video {
     padding: 5px;
   }
@@ -63,13 +63,9 @@
   
   .overlay {
     position: absolute;
-    padding: 0;
-    margin: 0;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    width: auto;
+    width: 100%;
     height: 100%;
     background-color: rgb(86, 81, 143);
     mix-blend-mode: overlay ;
@@ -80,12 +76,13 @@
   }
   
   .icons .row {
-    width: 50%;
+    max-width: 50%;
     text-align: center;
     /*transform: translateY(10px) rotate(-20deg);*/
   }
   
   .icons span {
+    text-align: center;
     color: #325092;
     font-size: 3rem;
     display: inline-block;
@@ -97,16 +94,7 @@
   #happy {
     font-weight: 600;
   }
-  
-  #name {
-    margin-top: 2rem;
-    font-weight: 900;
-    z-index: 10;
-    animation: flicker 4.5s infinite alternate;
-    color: #fff;
-  }
-  
-  /* Flickering animation */
+
   @keyframes flicker {
       
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
@@ -128,6 +116,20 @@
     }    
   }
   
+  #name {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0.2rem;
+    font-weight: 900;
+    z-index: 10;
+    animation: flicker 4.5s infinite alternate;
+    color: #fff;
+    
+  }
+  
+  /* Flickering animation */
+
+  
   div p {
     font-weight: 500;
     font-size: 1.5rem;
@@ -138,6 +140,11 @@
     
   }
   
+  .hurray {
+    animation: flicker 1.5s infinite alternate;
+    color: #325092;
+  }
+
   div p span {
     color: #eaedf3;
     font-size: 3rem;
@@ -166,7 +173,7 @@
   @media (min-width:770px) and (max-width: 1100px) {
     .section{
       object-fit: cover;
-      overflow:scroll;
+      overflow:hidden;
     }
   
     .video video  {
@@ -210,12 +217,11 @@
       padding-left: 0.5rem;
       text-align: center;
       width: 45%;
-      bottom: 10rem
       
     }
   }
   
-  @media (max-width: 769px) {
+  @media (min-width: 355px) and (max-width: 769px) {
     
     *{
       margin: 0;
@@ -228,7 +234,12 @@
       height: auto;
       
     }
-    .video {
+
+    div {
+        max-width: 98%;
+      }
+
+    div .video {
       justify-content: center;
       padding: 2px;
       display: flex;
@@ -238,10 +249,15 @@
   
     .video video {
       display: flex;
-      width: 75%;
-      height: 40%;
-      position: relative;
-      
+      width: 85%;
+      height: 40vh;
+      position: sticky;
+      align-self: center;
+      align-content: center;
+      justify-content: center;
+      justify-items: center;
+      justify-self: center;
+      flex-direction: column;
       
   
     }
@@ -252,7 +268,6 @@
       position: absolute;
       right: 1rem;
       top: 0.4rem;
-      
       border-radius:1rem;
       z-index: 10;
       
@@ -275,10 +290,11 @@
       z-index: 10;
       animation: flicker 4.5s infinite alternate;
       color: #fff;
+      width: 100%;
     }
   
     .icons .row {
-      width: 90%;
+      min-width: 100%;
       text-align: center;
       /*transform: translateY(10px) rotate(-20deg);*/
     }
@@ -288,19 +304,20 @@
       font-size: 1.8rem;
       display: inline-block;
       transition: transform 0.5s ease-in, opacity 0.7s;
+      min-width: 100%;
     }
   
     div p {
       position: absolute;
       bottom: 1rem;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 1.1rem;
       padding-top: 0rem;
       padding-left: 0.5rem;
       text-align: center;
-      width: 95%;
+      width: 100%;
       text-align: center;
-      
+      left: 0%;
       
     }
   
@@ -313,14 +330,12 @@
     .hurray {
       padding-top: 0;
       margin-top: 0;
-      
-  }
-  
-  .hurray {
       animation: flicker 1.5s infinite alternate;
       color: #fff;
-    }
-    
+      max-width: 90%;
+  }
+  
+ 
     /* Flickering animation */
     @keyframes flicker {
         
@@ -343,61 +358,101 @@
       } 
   }
   .shortnote {
-      padding-bottom: 0;
-      margin-bottom: 0rem ;
-      bottom: 3rem;
+        max-width: 95%;
+        padding-bottom: 0;
+        margin-bottom: 0rem ;
+        bottom: 5rem;
       
   }
   }
   
-  @media (min-width: 291px) and (max-width: 354px) {
+  @media (min-width: 356px) and (max-width: 389px) {
     .video video {
       width: 85%;
       height: 30vh;
     }
   
-    div p {
-      display: grid;
-      font-weight: 100;
-      font-size: 0.6rem;  
-    }
-  
     .shortnote{
       bottom:5rem;
-      
     }
   }
   
-  @media (max-width: 290px) {
-    .video video {
-      display: none;
+ @media (max-width: 355px) {
+    body {
+        max-height: 100vh;
     }
-  
+    div .video {
+        justify-content: center;
+        padding: 2px;
+        display: flex;
+        align-items: center;
+        
+      }
+    
+      .video video {
+        display: flex;
+        width: 85%;
+        height: 25vh;
+        position: sticky;
+        align-self: center;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+        justify-self: center;
+        flex-direction: column;
+        
+    
+      }
+    
+    #happy {
+        min-width: 98%;
+    }
+    #name {
+        min-width: 98%;
+        margin-top:  2rem;
+        font-weight: 900;
+        z-index: 10;
+        animation: flicker 4.5s infinite alternate;
+        color: #fff;
+      }
+
     .icons span {
-      font-size: 0.5rem;
+      font-size: 1.5rem;
     }
   
     .shortnote{
       bottom: 8rem;
-      font-size: 0.5rem;
-      text-align: left;
+      font-size: .9rem;
+      text-align: center;
       box-sizing: border-box;
+      min-width: 98%;
+      padding-top: 3rem;
     }
   
       div p span {
       color: #eaedf3;
       font-size: 0.5rem;
       font-weight: 700;
+      min-width: 98%;
     } 
   
     div p {
       display: grid;
       font-weight: 100;
       font-size: 1.8rem;  
+      min-width: 100%;
     }
   
     section img {
-      width:2.6rem;
-      height: 1.6rem;   
+      width:5.6rem;
+      height: 2.6rem;   
+    }
+    .hurray {
+        font-size: 1rem;
+        padding-top: 2rem;
+        margin-top: 0;
+        animation: flicker 1.5s infinite alternate;
+        color: #fff;
+        max-width: 90%;
     }
   }
