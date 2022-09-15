@@ -17,6 +17,13 @@ def all_groups(request):
 
 def list_of_customers(request):
     customers = Customer.objects.all()
+    dated = datetime.now().strftime('%m-%d')
+    for customer in customers:
+        if customer.date_of_birth.strftime("%m-%d") == dated:
+            gun.append(customer.name)
+        else:
+            pass
+    print(gun)
     return render(request, 'Birthday/index.html', {'customers':customers})
 
 def customer_page(request, slug):

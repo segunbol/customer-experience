@@ -22,17 +22,16 @@ class Group(models.Model):
 
 class Customer(models.Model):
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
-    name = models.CharField(('name'),max_length=255)
-    slug = models.SlugField((''),max_length=150, unique=True)
+    name = models.CharField( max_length=255,unique=False)
+    slug = models.SlugField(max_length=150, unique=False, primary_key=True)
     gender = models.CharField(max_length=10,choices=GENDER_CHOICES, default=" ")
-    erp_no = models.IntegerField(default= " ", blank=False, unique=True)
-    ippis_no_oracle_no_staff_id = models.CharField(max_length=10,default=" ",blank=False, unique=True)
+    erp_no = models.IntegerField(default= " ", blank=False, unique=False)
+    personal_email = models.EmailField(blank=True)
     date_of_birth = models.DateField()
     location = models.CharField(max_length=100)
-    phone_no = models.SmallIntegerField()
-    start_date = models.DateField()
-    end_date = models.DateField()
-    tenor = models.IntegerField()
+    phone_no_1 = models.SmallIntegerField()
+    phone_no_2 = models.IntegerField()
+   
 
     class Meta:
         verbose_name_plural = "Customers"

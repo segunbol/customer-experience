@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Customer',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=False, primary_key=False,default=0, serialize=True, verbose_name='ID',null=True)),
                 ('name', models.CharField(max_length=255)),
                 ('slug', models.SlugField(max_length=150, unique=True)),
                 ('date_of_birth', models.DateField()),

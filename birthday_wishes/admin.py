@@ -9,5 +9,5 @@ class GroupAdmin(admin.ModelAdmin):
 @admin.register(Customer)
 
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug', 'date_of_birth', 'erp_no','ippis_no_oracle_no_staff_id','location','phone_no', 'start_date', 'end_date', 'tenor']
+    list_display = ['name','group', 'slug', 'gender','date_of_birth', 'erp_no','location','phone_no_1','phone_no_2','personal_email',]
     prepopulated_fields = {'slug': ('name', 'erp_no',)}
