@@ -10,7 +10,7 @@ class Command(BaseCommand):
         pass
 
     def handle(self, *args, **options):
-        df= pd.read_csv('Update_Data_Router.csv')
+        df= pd.read_csv('Update_Data_Router_1.csv')
         for  ERP_NO, NAME,  PHONE_NO_1, PHONE_NO_2, EMAIL_PERSONAL, SLUG, GROUP_ID, DATE_OF_BIRTH,  GENDER, LOCATION in zip( df.Erp_no, df.Name, df.Phone_No_1,df.Phone_No_2, df.Email_personal,df.Slug, df.Group_id, df.Date_of_birth, df.Gender, df.Location):
             models=Customer( name=NAME, gender=GENDER, slug=SLUG, erp_no=ERP_NO, personal_email=EMAIL_PERSONAL, group_id=GROUP_ID, phone_no_1=PHONE_NO_1,phone_no_2=PHONE_NO_2, location=LOCATION, date_of_birth=DATE_OF_BIRTH)
             models.save()
