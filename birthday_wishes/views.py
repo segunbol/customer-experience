@@ -4,10 +4,22 @@ from .models import Customer, Group
 from datetime import datetime
 
 gun = []
+celebrant = []
+customers = Customer.objects.all()
+shoot = 0
+for customer in customers:
+    if shoot<= 1:
+        gun.append(customer.date_of_birth)
+    shoot = shoot + 1
+    if type(customer.date_of_birth) != type(gun[0]):
+        pass
+    else:
+        if customer.date_of_birth.strftime("%m-%d") == datetime.now().strftime('%m-%d'):
+            celebrant.append(customer)
 
 def all_customers(request):
     return {
-        'all_customers': Customer.objects.all()
+        'all_customers': celebrant
     }
 
 def all_groups(request):
@@ -24,7 +36,7 @@ def list_of_customers(request):
         else:
             pass
     print(gun)
-    return render(request, 'Birthday/index.html', {'customers':customers})
+    return render(request, 'Birthday/index.html', {'customers':celebrant})
 
 def customer_page(request, slug):
     customer = get_object_or_404(Customer, slug=slug)
