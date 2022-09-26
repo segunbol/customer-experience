@@ -50,11 +50,7 @@ class Command(BaseCommand):
                 try:
                     browser.find_element(By.XPATH, '//*[@id="side"]/div[1]/div/div/div[2]/div/div[2]').clear()
                     browser.find_element(By.XPATH, '//*[@id="side"]/div[1]/div/div/div[2]/div/div[2]').send_keys(peeps.name) # search bar
-                    while retry1<=3: 
-                        browser.find_element(By.XPATH, '//*[@id="side"]/div[1]/div/div/div[2]/div/div/div[2]').send_keys(Keys.ENTER)
-                        browser.find_element(By.XPATH,'//*[@id="pane-side"]/div[1]/div/div/div[12]/div/div/div[2]/div[1]').send_keys(Keys.ENTER)
-                        retry1 = retry1 + 1 
-                    print("First work")
+                    # print("First work")
                 except (NoSuchElementException, ElementNotInteractableException, ElementClickInterceptedException):
                     print("First didn't work")
                 time.sleep(10)
